@@ -1,0 +1,50 @@
+﻿@using ToDoListApplication.UI.Web.Controllers
+@using ToDoListApplication.UI.Web.ViewModels
+@model TaskViewModel
+
+<div class="container-fluid justify-content-center">
+    <h2 class="text-center display-4 mb-4">Delete Person</h2>
+    <div class="justify-content-center">
+        <div class="jumbotron">
+            <h1>Are you sure you want to delete @Model.Description?</h1>
+            <p class="lead">This action is irreversible and will remove all informations about @Model.Description.</p>
+            <hr />
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="row">                                                                
+                    <div class="col-12 align-self-center px-5">
+                        <div class="row">
+                            @Html.LabelFor(model => model.Description):
+                            @Html.DisplayTextFor(model => model.Description)
+                        </div>
+                        <div class="row">
+                            @Html.LabelFor(model => model.CreationDate):
+                            @Html.DisplayTextFor(model => model.CreationDate)
+                        </div>
+                        <div class="row">
+                            @Html.LabelFor(model => model.Category):
+                            @Html.DisplayTextFor(model => model.Category)
+                        </div>
+                        <div class="row">
+                            @Html.LabelFor(model => model.Status):
+                            @Html.DisplayTextFor(model => model.Status)
+                        </div>
+                        <div class="row">
+                            @Html.LabelFor(model => model.DeliveryDate):
+                            @Html.DisplayTextFor(model => model.DeliveryDate)
+                        </div>
+
+                    </div>
+                </div>
+                <hr />
+                @Html.ActionLink("Cancel", nameof(TaskController.Index), null, new { @class = "btn btn-danger" })
+                <button type="submit" class="btn btn-primary">Yes, I'm sure</button>
+            }
+
+
+        </div>
+
+    </div>
+</div>

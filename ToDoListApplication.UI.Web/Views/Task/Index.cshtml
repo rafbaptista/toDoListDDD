@@ -1,0 +1,91 @@
+﻿@using ToDoListApplication.UI.Web.Controllers
+@using ToDoListApplication.UI.Web.ViewModels
+@model IEnumerable<TaskViewModel>
+    
+<div class="container">
+    @Html.ActionLink("Add new task", nameof(TaskController.Create), "Task", null, new { @class = "btn btn-primary mt-3" })
+    <table class="table mt-3">
+        <thead>
+            <tr>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Id)                                                                                                                                                        
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.CreationDate)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Category)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.DeliveryDate)
+                </th>
+                <th scope="col">
+                    @Html.Raw("Options")
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.CreationDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.DeliveryDate)
+                </td>
+                <td>
+                    <a type="button" data-toggle="tooltip" data-placement="bottom" title="Edit" href="@Url.Action(nameof(TaskController.Edit), "Task", new {Id = item.Id })">
+                        <i class="fas fa-pencil-alt"></i>
+                    </a>
+                    <a type="button" data-toggle="tooltip" data-placement="bottom" title="Info" href="@Url.Action(nameof(TaskController.Details), new {Id = item.Id })" class="px-2">
+                        <i class="fas fa-info-circle"></i>
+                    </a>
+                    <a type="button" data-toggle="tooltip" data-placement="bottom" title="Delete" href="@Url.Action(nameof(TaskController.Delete), "Task", new { Id = item.Id})">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+@section styles {
+    <style>
+        i {
+            cursor: pointer;
+        }
+    </style>    
+}
+
+@section scripts {
+    <script>
+        var filterDesc = document.querySelector(".filterDesc");
+        var filterAsc = document.querySelector(".filterAsc");
+        filterDesc.onclick = function () {
+            filterAsc.classList.remove("d-none");    
+        }
+
+        
+        
+        
+    </script>
+    }

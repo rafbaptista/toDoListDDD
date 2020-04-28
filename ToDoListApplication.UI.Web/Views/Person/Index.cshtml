@@ -1,0 +1,60 @@
+﻿@using ToDoListApplication.UI.Web.Controllers
+@using ToDoListApplication.UI.Web.ViewModels
+@model IEnumerable<PersonViewModel>
+
+    <div class="container">        
+        @Html.ActionLink("Add new person", nameof(PersonController.Create), "Person", null, new {@class = "btn btn-primary mt-3" })
+        
+        <table class="table mt-3">
+            <thead>
+                <tr>
+                    <th scope="col">
+                        @Html.DisplayNameFor(model => model.Id)
+                    </th>
+                    <th scope="col">                        
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th scope="col">
+                        @Html.DisplayNameFor(model => model.Age)
+                    </th>
+                    <th scope="col">
+                        @Html.DisplayNameFor(model => model.Gender)
+                    </th>
+                    <th scope="col">
+                        @Html.Raw("Options")
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(model => item.Id)
+                        </td>
+                        <td>
+                            <img style="max-height:25px;max-width:25px;border-radius:50%;" src="@item.AvatarImagePath" />
+                            @Html.DisplayFor(model => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.Age)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.Gender)
+                        </td>
+                        <td>
+                            <a type="button" data-toggle="tooltip" data-placement="bottom" title="Edit" href="@Url.Action(nameof(PersonController.Edit), "Person", new {Id = item.Id })">
+                                <i class="fas fa-pencil-alt"></i>
+                            </a>
+                            <a type="button" data-toggle="tooltip" data-placement="bottom" title="Info" href="@Url.Action(nameof(PersonController.Details), new {Id = item.Id })" class="px-2">
+                                <i class="fas fa-info-circle"></i>
+                            </a>
+                            <a type="button" data-toggle="tooltip" data-placement="bottom" title="Delete" href="@Url.Action(nameof(PersonController.Delete), "Person", new { Id = item.Id})">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>

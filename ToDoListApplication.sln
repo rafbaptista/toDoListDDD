@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.902
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Presentation", "0 - Presentation", "{65F3E189-D723-4984-B733-ACBC7FC5744C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Services", "1 - Services", "{794E949C-27FE-457A-9EBA-05BAEA8F3479}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{08F6A843-E9AB-4EB8-8406-AF6A7A3B6343}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{92C52F8D-2030-42A0-998E-35BFCB16FB0A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infrastructure", "4 - Infrastructure", "{F8A97FA9-4525-4158-8FE5-21225F0E4C0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoListApplication.Domain", "ToDoListApplication.Domain\ToDoListApplication.Domain.csproj", "{69143AE0-27EC-4BF8-A4AF-18AB9A44AD08}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - Data", "4.1 - Data", "{A9FD0009-6514-4447-9F7C-88B3CDC4228C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoListApplication.Infrastructure", "ToDoListApplication.Infrastructure\ToDoListApplication.Infrastructure.csproj", "{3600DB5D-81FF-450F-A41E-3C89A0009057}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoListApplication.ApplicationServices", "ToDoListApplication.ApplicationServices\ToDoListApplication.ApplicationServices.csproj", "{D8B01AE0-D112-4B5B-9808-418B6B4854E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoListApplication.UI.Web", "ToDoListApplication.UI.Web\ToDoListApplication.UI.Web.csproj", "{7F7D8966-8539-4BA1-87CF-7E707DE5FF17}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69143AE0-27EC-4BF8-A4AF-18AB9A44AD08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69143AE0-27EC-4BF8-A4AF-18AB9A44AD08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69143AE0-27EC-4BF8-A4AF-18AB9A44AD08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69143AE0-27EC-4BF8-A4AF-18AB9A44AD08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3600DB5D-81FF-450F-A41E-3C89A0009057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3600DB5D-81FF-450F-A41E-3C89A0009057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3600DB5D-81FF-450F-A41E-3C89A0009057}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3600DB5D-81FF-450F-A41E-3C89A0009057}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8B01AE0-D112-4B5B-9808-418B6B4854E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8B01AE0-D112-4B5B-9808-418B6B4854E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8B01AE0-D112-4B5B-9808-418B6B4854E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8B01AE0-D112-4B5B-9808-418B6B4854E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F7D8966-8539-4BA1-87CF-7E707DE5FF17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F7D8966-8539-4BA1-87CF-7E707DE5FF17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F7D8966-8539-4BA1-87CF-7E707DE5FF17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F7D8966-8539-4BA1-87CF-7E707DE5FF17}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{69143AE0-27EC-4BF8-A4AF-18AB9A44AD08} = {92C52F8D-2030-42A0-998E-35BFCB16FB0A}
+		{A9FD0009-6514-4447-9F7C-88B3CDC4228C} = {F8A97FA9-4525-4158-8FE5-21225F0E4C0B}
+		{3600DB5D-81FF-450F-A41E-3C89A0009057} = {A9FD0009-6514-4447-9F7C-88B3CDC4228C}
+		{D8B01AE0-D112-4B5B-9808-418B6B4854E5} = {08F6A843-E9AB-4EB8-8406-AF6A7A3B6343}
+		{7F7D8966-8539-4BA1-87CF-7E707DE5FF17} = {65F3E189-D723-4984-B733-ACBC7FC5744C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B4D4AC6C-C5E9-4894-ADCC-ADA409643CED}
+	EndGlobalSection
+EndGlobal

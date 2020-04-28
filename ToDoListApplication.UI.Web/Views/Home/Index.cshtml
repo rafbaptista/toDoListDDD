@@ -1,0 +1,31 @@
+﻿@using ToDoListApplication.UI.Web.Controllers
+   
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-12 text-center p-3">
+            <a class="btn btn-primary" href="@Url.Action(nameof(TaskController.Create),"Task")">
+                <i class="fas fa-plus"></i>
+                Add new task
+            </a>
+
+            <a class="btn btn-primary" href="@Url.Action(nameof(PersonController.Create),"Person")">
+                <i class="fas fa-plus"></i>
+                Add new person
+            </a>
+        </div>
+
+        <div class="col-md-4 mb-3 mb-md-0">
+            @Html.Action(nameof(TaskController.Pending), "Task")
+        </div>
+
+        <div class="col-md-4 mb-3 mb-md-0">
+            @Html.Action(nameof(TaskController.InProgress), "Task")
+        </div>
+
+        <div class="col-md-4 mb-3 mb-md-0">
+            @Html.Action(nameof(TaskController.Completed), "Task")
+        </div>
+    </div>
+   
+</div>

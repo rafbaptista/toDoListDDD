@@ -1,0 +1,62 @@
+﻿@using ToDoListApplication.UI.Web.ViewModels
+@using ToDoListApplication.UI.Web.Controllers
+@model TaskViewModel
+
+<div class="container-fluid justify-content-center">
+    <h2 class="text-center display-4 mb-4">Details</h2>
+    <div class="row justify-content-center">
+
+        <div class="card col-lg-5 col-md-7 col-sm-10 m-2 p-0">
+            <div class="card-header">
+                <div class="col-12 ">
+                    <span class="font-weight-bold">@Html.Raw(Model.Description)</span>
+                    <span class="float-right">#@Html.Raw(Model.Id)</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        @Html.LabelFor(model => model.CreationDate):
+                        @Html.DisplayFor(model => model.CreationDate)
+                    </div>
+                    <div class="col-lg-6">
+                        @Html.LabelFor(model => model.DeliveryDate):                        
+                        @Html.DisplayFor(model => model.DeliveryDate)
+                    </div>                                                               
+                    <div class="col-lg-6">
+                        @Html.LabelFor(model => model.Category):
+                        @Html.DisplayFor(model => model.Category)
+                    </div>
+                    <div class="col-lg-6">
+                        @Html.LabelFor(model => model.Status):
+                        @Html.DisplayFor(model => model.Status)
+                    </div>
+                    <div class="col-12">
+                        @Html.LabelFor(model => model.PersonId):
+                        <a href="@Url.Action(nameof(PersonController.Details), "Person", new {Id = Model.Id })">@Model.Person.Name</a>
+
+                    </div>
+                    <div class="col-12">
+                        <hr />
+                        @Html.LabelFor(model => model.DeadLine):                        
+                        @Html.DisplayFor(model => model.DeadLine)
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-12">
+                        @Html.ActionLink("Back to Task's list", nameof(TaskController.Index), "Home", null, new { @class = "btn btn-secondary" })
+                        @Html.ActionLink("Back to Home", nameof(HomeController.Index), "Home", null, new { @class = "btn btn-secondary" })
+                        @Html.ActionLink("Edit", nameof(TaskController.Edit), new { Id = Model.Id }, new { @class = "btn btn-secondary" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p>
+
+
+
+</p>

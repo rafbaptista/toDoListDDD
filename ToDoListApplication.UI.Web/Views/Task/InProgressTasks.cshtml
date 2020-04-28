@@ -1,0 +1,76 @@
+﻿@using ToDoListApplication.UI.Web.ViewModels
+@using ToDoListApplication.UI.Web.Controllers
+@using ToDoListApplication.Domain.Enums
+
+@model List<TaskViewModel>
+
+@{
+    Layout = null;
+}
+
+<div class="card p-2">
+    <div class="card-body">
+        <div class="card-title lead text-center font-weight-bold text-info">In Progress Tasks</div>
+
+        @if (Model.Count > 0)
+        {
+            foreach (var task in Model)
+            {
+                <div class="card my-3">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-10">
+                                <span class="font-weight-bold">@Html.Raw(task.Description)</span>
+                            </div>
+                            <div class="col-2">
+                                <span class="float-right">#@Html.Raw(task.Id)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <span>
+                                    @Html.LabelFor(model => task.Category):
+                                    @Html.Raw(task.Category)
+                                </span>
+                                <br />
+                                <span>
+                                    @Html.LabelFor(Model => task.DeliveryDate):
+                                    @Html.Raw(task.DeliveryDate.ToShortDateString())
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="col-12">
+                            <a type="button" data-toggle="tooltip" data-placement="bottom" title="Delete" href="@Url.Action(nameof(TaskController.Delete), new {Id = task.Id })" onclick="return confirm('Are you sure you want to delete task #@task.Id ?\n @task.Description' )">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                            <a type="button" data-toggle="tooltip" data-placement="bottom" title="Edit" href="@Url.Action(nameof(TaskController.Edit), new {Id = task.Id })" class="px-2">
+                                <i class="fas fa-pencil-alt"></i>
+                            </a>
+                            <a type="button" data-toggle="tooltip" data-placement="bottom" title="Info" href="@Url.Action(nameof(TaskController.Details), new {Id = task.Id })" class="px-2">
+                                <i class="fas fa-info-circle"></i>
+                            </a>
+                            <a type="button" data-toggle="tooltip" data-placement="bottom" title="Set task in Pending" href="@Url.Action(nameof(TaskController.ChangeStatus), new {taskId = task.Id, newStatus = TaskStatus.Pending })" class="px-2">
+                                <i class="far fa-pause-circle"></i>
+                            </a>
+                            <a type="button" data-toggle="tooltip" data-placement="bottom" title="Set task Completed" href="@Url.Action(nameof(TaskController.ChangeStatus), new {taskId = task.Id, newStatus = TaskStatus.Completed })">
+                                <i class="far fa-check-circle"></i>
+                            </a>
+                            <a type="button" data-toggle="tooltip" data-placement="bottom" title="@task.Person.Name" href="@Url.Action(nameof(PersonController.Details), "Person", new {Id = task.PersonId })" class="float-right">
+                                    <img style="max-height:25px;max-width:25px;border-radius:50%;" src="@task.Person.AvatarImagePath" />
+                                </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <p class="lead text-center">You have no in progress tasks, have you already finished them all?</p>
+        }
+    </div>
+</div>

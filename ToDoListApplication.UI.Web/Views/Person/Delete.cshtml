@@ -1,0 +1,58 @@
+﻿@using ToDoListApplication.UI.Web.Controllers
+@using ToDoListApplication.UI.Web.ViewModels
+@model PersonViewModel
+
+<div class="container-fluid justify-content-center">
+    <h2 class="text-center display-4 mb-4">Delete Person</h2>
+    <div class="justify-content-center">        
+        <div class="jumbotron">
+            <h1>Are you sure you want to delete @Model.Name?</h1>
+            <p class="lead">This action is irreversible and will remove all informations about @Model.Name.</p>
+            <hr />
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="row">
+                    <div class="col-2">
+                        <img src="@Model.AvatarImagePath" class="rounded-circle img-fluid" style="width:150px;height:150px;" />
+                    </div>
+                    <div class="col-10 align-self-center px-5">
+                        <div class="row">
+                            @Html.LabelFor(model => model.Name):
+                            @Html.DisplayTextFor(model => model.Name)
+                        </div>
+                        <div class="row">
+                            @Html.LabelFor(model => model.Age):
+                            @Html.DisplayTextFor(model => model.Age)
+                        </div>
+                        <div class="row">
+                            @Html.LabelFor(model => model.Gender):
+                            @Html.DisplayTextFor(model => model.Gender)
+                        </div>
+                        <div class="row">
+                            @Html.LabelFor(model => model.Tasks):
+                            @foreach (var task in Model.Tasks)
+                            {
+                                if (task != Model.Tasks.Last())
+                                {
+                                    @Html.Raw(task.Description + ", ")
+                                }
+                                else
+                                {
+                                    @Html.Raw(task.Description)
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                @Html.ActionLink("Cancel", nameof(PersonController.Index), null, new { @class = "btn btn-danger" })
+                <button type="submit" class="btn btn-primary">Yes, I'm sure</button>                
+            }
+
+
+        </div>
+
+    </div>
+</div>
