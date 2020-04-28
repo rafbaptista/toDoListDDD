@@ -14,7 +14,7 @@ Although very simple, this project was built using a lot of technologies, some o
 • ASP.NET MVC 5  
 • SQL Server  
 • Entity Framework Code First 6.4  
-• Fluent API (Mapping)
+• Fluent API (Mapping)  
 • Bootstrap 4.4.1  
 • AutoMapper 7.0.1  
 • Chart.js 2.9.3  
