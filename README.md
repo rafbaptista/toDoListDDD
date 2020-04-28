@@ -19,9 +19,9 @@ Although very simple, this project was built using a lot of technologies, some o
 • AutoMapper 7.0.1  
 • Chart.js 2.9.3  
 • Simple Injector 4.9.2  
-• ViewModels/Models
-• Custom Attributes
-• Extension Methods
+• ViewModels/Models  
+• Custom Attributes  
+• Extension Methods  
 
 ## Architecture
 
