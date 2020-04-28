@@ -43,4 +43,4 @@ Responsable for keeping the business rules, validations and communication with t
 
 #### Infrastructure
 
-Responsable for persistence with the database, configurations about context, databases initializers
+Responsable for persistence with the database, configurations about context and databases initializers
