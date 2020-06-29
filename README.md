@@ -9,15 +9,15 @@ Although very simple, this project was built using a lot of technologies, some o
 • .NET Framework 4.6.1  
 • ASP.NET MVC 5  
 • SQL Server  
-• Entity Framework Code First
+• Entity Framework Code First  
 • Fluent API (Mapping)  
-• Bootstrap 4.4.
+• Bootstrap 4.4  
 • AutoMapper  
 • Chart.js 2.9  
-• Simple Injector 
-• ViewModels/Models  
-• Custom Attributes  
-• Extension Methods  
+• Simple Injector   
+• ViewModels/Models    
+• Custom Attributes    
+• Extension Methods   
 
 ## Architecture
 
